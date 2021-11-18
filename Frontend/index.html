@@ -1,38 +1,95 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>G8</title>
-   <link rel="stylesheet" href="Mystyle.css" type="text/css"/>
-   <script src="Myscript.js"></script>
-</head>
-<body>
+    <link rel="stylesheet" href="Mystyle.css" type="text/css" />
+    <script src="Myscript.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
     <header>
-        <h1>Mi titulo Header</h1>
+      <h1 id="tituloheader">
+        Mi titulo
+        <img
+          src="https://as01.epimg.net/epik/imagenes/2018/11/05/portada/1541440062_346544_1541440238_noticia_normal_recorte1.jpg"
+          alt="imagen"
+        />
+        Header
+      </h1>
     </header>
-    <nav>
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="index.html">Clientes</a></li>
-        </ul>
+
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1>Columna 1</h1>
+          <p>Columna 1 – Fila 1</p>
+        </div>
+        <div class="col">
+            <h1>Columna 3</h1>
+            <p>Columna 3 – Fila 2</p>
+          </div>
+      </div>
+    
+    </div>
+
+    <table>
+      <caption>
+        Tabla de Clientes
+      </caption>
+      <tr>
+        <th>NOMBRE</th>
+        <th>APELLIDO</th>
+        <th>EDAD</th>
+      </tr>
+      <tr>
+        <td>Juan</td>
+        <td>Perez</td>
+        <td>20</td>
+      </tr>
+      <tr>
+        <td>Pedro Pedro Pedro Pedro Pedro Pedro</td>
+        <td>Gonzalez</td>
+        <td>30</td>
+      </tr>
+    </table>
+    <nav class="fondo">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="index.html">Clientes</a></li>
+      </ul>
     </nav>
-    <input type="button" value="Añadir" onclick="add()">
+    <input type="button" value="Añadir" onclick="add()" />
     <button onclick="add()">Añadir</button>
     <aside>
-        <section>
-            <h2>Mi titulo Aside</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, doloremque, doloribus, ea, eius, ipsam, ipsum, laudantium, molestias, natus, nisi, officia, quae, quisquam, quod, reiciendis, repellendus, sapiente, sed, sint, sit, sunt, tempora, vel, voluptas, voluptatem.</p>
-        </section>
+      <section>
+        <h2>Mi titulo Aside</h2>
+        <p class="parrafo">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid,
+          doloremque, doloribus, ea, eius, ipsam, ipsum, laudantium, molestias,
+          natus, nisi, officia, quae, quisquam, quod, reiciendis, repellendus,
+          sapiente, sed, sint, sit, sunt, tempora, vel, voluptas, voluptatem.
+        </p>
+      </section>
     </aside>
     <article>
-        <section>
-            <h1>Titulo</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, doloremque, doloribus, ea, eius, ipsam, ipsum, laudantium, molestias, natus, nisi, officia, quae, quisquam, quod, reiciendis, repellendus, sapiente, sed, sint, sit, sunt, tempora, vel, voluptas, voluptatem.</p>
-        </section>
+      <section>
+        <h1>Titulo</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid,
+          doloremque, doloribus, ea, eius, ipsam, ipsum, laudantium, molestias,
+          natus, nisi, officia, quae, quisquam, quod, reiciendis, repellendus,
+          sapiente, sed, sint, sit, sunt, tempora, vel, voluptas, voluptatem.
+        </p>
+      </section>
     </article>
     <footer>
-        <h1>Mi titulo Footer</h1>
+      <h1>Mi titulo Footer</h1>
     </footer>
-</body>
-
+  </body>
 </html>

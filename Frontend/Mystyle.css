@@ -1,3 +1,42 @@
-h1{
-    background-color:aqua;
+*{
+  font-family: "Courier New", Courier, monospace;
+  margin: 0;
+}
+
+h1 {
+  color: brown;
+}
+
+.fondo {
+  background-color: burlywood;
+}
+
+#tituloheader {
+ font-size: 50px;
+ text-decoration: underline overline;
+ text-align: center;
+ text-transform: uppercase;
+}
+
+.parrafo {
+  line-height: 20px;
+  text-indent: 30px;
+  /*word-spacing: 30px;*/
+  /*letter-spacing: 20px;*/
+}
+
+img{
+    width: 8%;
+    vertical-align: middle;
+}
+
+table {
+ caption-side: bottom;
+ table-layout: fixed;
+ width: 100%;
+ border-collapse: collapse; 
+}
+
+th,td{
+    border: 1px solid black;
 }
