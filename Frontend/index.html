@@ -13,7 +13,7 @@
     />
   </head>
   <body>
-    <header>
+    <header onclick="clickme()" onmouseover="mouseover()">
       <h1 id="tituloheader">
         Mi titulo
         <img
@@ -31,13 +31,18 @@
           <p>Columna 1 – Fila 1</p>
         </div>
         <div class="col">
-            <h1>Columna 3</h1>
-            <p>Columna 3 – Fila 2</p>
-          </div>
+          <h1>Columna 3</h1>
+          <p>Columna 3 – Fila 2</p>
+        </div>
       </div>
-    
     </div>
 
+    <select id="selector" onchange="cambiar()">
+      <option value="1">Opcion 1</option>
+      <option value="2">Opcion 2</option>
+      <option value="3">Opcion 3</option>
+    </select>
+    <input type="text" id="input" onkeydown="keydown()" maxlength="10" />
     <table>
       <caption>
         Tabla de Clientes
