@@ -106,3 +106,106 @@ function keydown() {
         input.style.backgroundColor = "white";
     }     
 }
+
+//javascript 2
+
+let persona = new Object();
+persona.nombre = "Juan";
+persona.apellido = "Perez";
+persona.edad = 30;
+console.log(persona);
+
+const persona2 = {
+    nombre: "Juan",
+    apellido: "Perez",
+    edad: 30,
+    detalle : function() {
+        console.log(this.nombre + " " + this.apellido + " " + this.edad);
+    }
+}
+
+persona2.nuevaPropiedad = "nueva propiedad";
+console.log(persona2["edad"]);
+console.log(persona2);
+persona2.detalle();
+
+let dia2 = new Date();
+
+console.log(dia2);
+
+let numeros = [1, "Saludo", persona2, 4, 5, 6, 7, 8, 9, 10];
+
+console.log(numeros);
+numeros.push(100);
+//numeros.push(numeros2);
+console.log(numeros);
+let ultimo = numeros.pop();
+console.log(ultimo);
+console.log(numeros);
+numeros.unshift(80);
+console.log(numeros);
+numeros.shift();
+console.log(numeros);
+let numeros2 = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+let contenacion = numeros.concat(numeros2);
+console.log(contenacion);
+console.log(numeros);
+//let r = numeros + "," + numeros2;
+//console.log(r);
+console.log(numeros.slice(2, 6));
+console.log(numeros);
+//console.log(numeros.splice(2, 6));
+//console.log(numeros);
+console.log(numeros.join(" - "));
+console.log(numeros);
+//console.log(numeros.splice(2, 6, "hola", "mundo"));
+console.log(numeros);
+console.log(Array.from("hola"));
+console.log(Array.isArray(numeros));
+console.log(numeros.includes(persona2));
+//console.log(numeros.fill(0,3,7));
+console.log(numeros.reverse());
+let palabras = ["hola", "mundo", "como", "estas"];
+console.log(palabras.sort());
+numeros.sort((a, b) => {
+    return a - b
+});
+console.log(numeros);
+
+numeros.forEach(element => {
+    console.log(element);
+});
+
+let resultado3 = numeros2.every(element => {
+    return element > 0;
+});
+
+
+console.log(resultado3);
+
+let resultado4 = numeros2.some(element => {
+    return element > 0;
+});
+
+console.log(resultado4);
+
+let nuevoArray = numeros2.map(element => {
+    return element * 2;
+});
+
+console.log(nuevoArray);
+
+let nuevoArray2 = numeros2.filter(element => {
+    return element != 15;
+});
+
+console.log(nuevoArray2);
+
+let dato = numeros2.find(element => {
+    return element == 15;
+});
+
+console.log(dato);
+
+
+
