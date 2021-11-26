@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -35,23 +36,25 @@ public class PersonaController {
     }
 
     @GetMapping("/{id}")
-    public Object get(@PathVariable String id) {
-        return null;
+    public Persona getById(@PathVariable Integer id) {
+        return personaService.getById(id).orElse(null);
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<?> put(@PathVariable String id, @RequestBody Object input) {
-        return null;
+    @PutMapping("/update")
+    public ResponseEntity<Persona> update(@RequestBody Persona persona) {
+        Persona p = personaService.update(persona);
+        return new ResponseEntity(p, HttpStatus.OK);
     }
 
-    @PostMapping
-    public ResponseEntity<?> post(@RequestBody Object input) {
-        return null;
+    @PostMapping("/save")
+    public ResponseEntity<Persona> save(@RequestBody Persona persona) {
+        Persona p = personaService.save(persona);
+        return new ResponseEntity(p, HttpStatus.CREATED);
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<?> delete(@PathVariable String id) {
-        return null;
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity delete(@PathVariable Integer id) {
+        personaService.delete(id);
+        return new ResponseEntity(HttpStatus.NO_CONTENT);
     }
-
 }
