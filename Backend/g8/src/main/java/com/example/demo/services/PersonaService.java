@@ -25,32 +25,33 @@ public class PersonaService {
         return personaRepository.getAll();
     }
     
-    public Optional<Persona> getById(Integer id) {
-        return personaRepository.getById(id);
+    public Persona getById(Integer id) {
+        return personaRepository.getById(id).orElse(null);
     }
     
     public Persona save(Persona persona) {
         
-        if (persona.getId() == null) {
+        if (persona.getId() == null) 
             return persona;
-        }
         
-        Optional<Persona> existePersona = getById(persona.getId());
+        Optional<Persona> existePersona = personaRepository.getById(persona.getId());
         
-        if (existePersona.isPresent()) {
+        if (existePersona.isPresent()) 
             return persona;
-        }
         
         return personaRepository.save(persona);
     }
     
     public Persona update(Persona persona) {
         
-        Optional<Persona> existePersona = getById(persona.getId());
-        
-        if (existePersona.isEmpty()) {
+          if (persona.getId() == null)
             return persona;
-        }
+        
+        Optional<Persona> existePersona = personaRepository.getById(persona.getId());
+        
+        if (existePersona.isEmpty()) 
+            return persona;
+        
 
         //existePersona.get().setNombre(persona.getNombre());
         //existePersona.get().setCorreo(persona.getCorreo());
