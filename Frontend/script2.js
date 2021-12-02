@@ -106,3 +106,23 @@ const consultarProducto = async () => {
 
 consultarProducto();
 console.log("fin");
+
+//-----------------------------------------------
+//Manupilacion del DOM
+//const elements = document.getElementsByClassName("col");
+//const elements = document.getElementsByTagName("div");
+//const element = document.getElementById("selector");
+//const element = document.querySelector("#selector");
+const elements = document.querySelectorAll("input");
+console.log(elements);
+
+for (const element of elements) {
+    if (element.value.length == 0) {
+        element.style.border = "1px solid red";
+    }
+    else {
+        element.style.border = "1px solid green";
+    }
+}
+
+
