@@ -1,13 +1,41 @@
 import React from 'react';
+import "./HelloMessage.css";
 
 class HelloMessage extends React.Component {
+
+
+    //Montaje
+    componentDidMount() {
+        console.log('HelloMessage componentDidMount');
+    }
+
+    //actualizacion
+    componentDidUpdate() {
+        console.log('HelloMessage componentDidUpdate');
+    }
+
+    //destruccion
+    componentWillUnmount() {
+        console.log('HelloMessage componentWillUnmount');
+    }
+
     render() {
+
+        function formatNombre(user) {
+            return user.nombre + ' ' + user.apellido;
+        }
+
+        function getSaludo(user) {
+            if (user)
+                return <h1>Hola {formatNombre(user)}</h1>
+
+            return <h2>Hola desconocido</h2>;
+        }
+
         return (
-            <div>
-                <h1>Hello Message  
-                    { " "+this.props.nombre + " " + this.props.apellido } 
-                </h1>
-            </div>
+            <>
+              <div className = "titulo" >{getSaludo(this.props.user)} </div>
+            </>
         );
     }
 }
