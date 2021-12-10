@@ -17,6 +17,19 @@ class TodoApp extends React.Component {
   handleClick(event) {
     //console.log(event.target.value);
 
+    //Eliminar localStorage
+    //localStorage.removeItem("text");
+    //limpiar localStorage
+    //localStorage.clear();
+    
+    //obtener un valor
+    //const texto = localStorage.getItem("text");
+    //console.log(texto);
+
+    if(this.state.text.length === 0){
+      return;
+    }
+
     let newItem = {
       id: Date.now(),
       text: this.state.text,
@@ -29,6 +42,9 @@ class TodoApp extends React.Component {
       items: state.items.concat(newItem),
       text: "",
     }));
+
+   
+
   }
   //input
   handleChange(event) {
@@ -38,6 +54,10 @@ class TodoApp extends React.Component {
     this.setState(() => ({
       text: event.target.value,
     }));
+
+    //localstorage
+    //localStorage.setItem("text", event.target.value);
+
   }
 
   render() {
@@ -46,11 +66,9 @@ class TodoApp extends React.Component {
         <h3>Tareas pendientes</h3>
 
         <ul>
-          {
-          this.state.items.map((item) => (
+          {this.state.items.map((item) => (
             <li key={item.id}> {item.text} </li>
-          ))
-          }
+          ))}
         </ul>
 
         <label>¿Qué necesito hacer? </label>
@@ -59,7 +77,9 @@ class TodoApp extends React.Component {
           value={this.state.text}
           onChange={this.handleChange}
         />
-        <button onClick={this.handleClick}>Añadir #{this.state.items.length + 1} </button>
+        <button onClick={this.handleClick}>
+          Añadir #{this.state.items.length + 1}{" "}
+        </button>
       </>
     );
   }
