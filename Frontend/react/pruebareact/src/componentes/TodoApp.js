@@ -1,4 +1,5 @@
 import React from "react";
+import { DataContext } from "./DataContext";
 
 class TodoApp extends React.Component {
   constructor(props) {
@@ -13,6 +14,7 @@ class TodoApp extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
+  static contextType = DataContext;
   //button
   handleClick(event) {
     //console.log(event.target.value);
@@ -21,12 +23,12 @@ class TodoApp extends React.Component {
     //localStorage.removeItem("text");
     //limpiar localStorage
     //localStorage.clear();
-    
+
     //obtener un valor
     //const texto = localStorage.getItem("text");
     //console.log(texto);
 
-    if(this.state.text.length === 0){
+    if (this.state.text.length === 0) {
       return;
     }
 
@@ -43,7 +45,7 @@ class TodoApp extends React.Component {
       text: "",
     }));
 
-   
+
 
   }
   //input
@@ -60,7 +62,20 @@ class TodoApp extends React.Component {
 
   }
 
+  handleChangeSelect = (event) => {
+    console.log(event.target.value);
+  }
+
   render() {
+
+    const { user, setUser } = this.context;
+
+    const frutas = [
+      { id: 1, nombre: "Manzana" },
+      { id: 2, nombre: "Naranja" },
+      { id: 3, nombre: "Uvas" }
+    ];
+
     return (
       <>
         <h3>Tareas pendientes</h3>
@@ -70,16 +85,33 @@ class TodoApp extends React.Component {
             <li key={item.id}> {item.text} </li>
           ))}
         </ul>
+        <pre>user {JSON.stringify(user, null, 2)}  </pre>
 
         <label>¿Qué necesito hacer? </label>
-        <input
-          type="text"
+        <textarea
+          // type="text"
           value={this.state.text}
           onChange={this.handleChange}
         />
         <button onClick={this.handleClick}>
           Añadir #{this.state.items.length + 1}{" "}
         </button>
+        <button onClick=
+          {
+            () => setUser({
+              nombre: "modificado",
+              apellido: "desde TodoApp"
+            })
+          }  >modificar datos globales</button>
+
+        <select onChange={this.handleChangeSelect}>
+          <option value="">Seleccione una opción</option>
+          {
+            frutas.map((fruta) => {
+              return <option key={fruta.id} value={fruta.id}>{fruta.nombre}</option>
+            })
+          }
+        </select>
       </>
     );
   }

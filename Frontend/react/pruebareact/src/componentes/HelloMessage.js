@@ -1,8 +1,9 @@
 import React from 'react';
 import "./HelloMessage.css";
-
+import { DataContext } from './DataContext';
 class HelloMessage extends React.Component {
 
+static contextType = DataContext;
 
     //Montaje
     componentDidMount() {
@@ -32,9 +33,11 @@ class HelloMessage extends React.Component {
             return <h2>Hola desconocido</h2>;
         }
 
+        const {user} = this.context;
+      
         return (
             <>
-              <div className = "titulo" >{getSaludo(this.props.user)} </div>
+              <div className = "titulo" >{getSaludo(user)} </div>
             </>
         );
     }
